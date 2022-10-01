@@ -1,0 +1,32 @@
+home:
+    resource: "@HomeBundle/Resources/config/routing.yml"
+    prefix:   /
+
+user:
+    resource: "@UserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+project:
+    resource: "@ProjectBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+recar_api:
+    type: rest
+    resource: "@ProjectBundle/Resources/config/routing_api.yml"
+    prefix:   /apicar
+
+reclient_api:
+    type: rest
+    resource: "@HomeBundle/Resources/config/routing_api.yml"
+    prefix: /apiclient
+
+fos_js_routing:
+    resource: "@FOSJsRoutingBundle/Resources/config/routing/routing.xml"
+
+
+

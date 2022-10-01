@@ -1,0 +1,21 @@
+{% extends '@Project/base.html.twig' %}
+
+{% block main %}
+
+
+    <main id="main" class="main">
+
+        <div class="row">
+            <div class="col-6">
+
+                <img width="400px" height="400px" src="{{  asset('uploads/recar/car/images/' ~ car.imageName)  }}"  alt="car"/>
+
+
+            </div>
+            <div class="col-6">Info Car</div>
+        </div>
+    </main>
+
+
+{% endblock %}
+

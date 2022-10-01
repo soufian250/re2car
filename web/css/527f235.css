@@ -1,0 +1,8 @@
+.error{
+    box-shadow: 0 0 6px #f12222;
+}
+
+
+input:focus{
+    box-shadow: 0 0 6px #4551e1;
+}

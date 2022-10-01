@@ -1,0 +1,3 @@
+recar_rest:
+   resource: ProjectBundle\ApiRestController\ApiRestProjectController
+   type: rest

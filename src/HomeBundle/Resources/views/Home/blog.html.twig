@@ -1,0 +1,47 @@
+{%extends '@Home/Home/master.html.twig'%}
+
+{% block  main %}
+  <div class="hero inner-page" style="background-image: url('{{ asset('assets/css/front/images/hero_1_a.jpg') }}');">
+      <div class="container">
+        <div class="row align-items-end ">
+          <div class="col-lg-5">
+            <div class="intro">
+              <h1><strong>Blog</strong></h1>
+              <div class="custom-breadcrumbs"><a href="{{ path('home') }}">Accueil</a> <span class="mx-2">/</span> <strong>Blog</strong></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="site-section bg-light">
+      <div class="container">
+        <div class="row">
+        {% for post in posts  %}
+          <div class="col-lg-4 col-md-6 mb-4">
+            <div class="post-entry-1 h-100">
+              <a href="{{ path('singleBlog', {'id': post.id}) }}">
+                <img src="{{ asset('/uploads/recar/post/images/'~post.imageName) }}" alt="Image"
+                 class="img-fluid">
+              </a>
+              <div class="post-entry-1-contents">
+                
+                <h2><a href="{{ path('singleBlog' , {'id': post.id}) }}">{{ post.title }}</a></h2>
+                <span class="meta d-inline-block mb-3"> {{ post.createdAt|date("m/d/Y")}}<span class="mx-2">by</span> Admin</span>
+                <p>{{ post.body }}</p>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        </div>
+
+        <div class="row">
+        <div class="col-5">
+          <div class="custom-pagination">
+            <div class="text-center">{{ knp_pagination_render(posts) }}</div>
+          </div>
+        </div>
+      </div>
+
+      </div>
+    </div>
+{% endblock %}

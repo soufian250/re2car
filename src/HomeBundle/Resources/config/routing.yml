@@ -1,0 +1,55 @@
+home_homepage:
+    path:     /index
+    defaults: { _controller: HomeBundle:Default:index }
+
+
+cars_listing:
+    path:     /cars/listing
+    defaults: { _controller: HomeBundle:Default:CarsListing }
+
+#home
+home:
+    path: /home
+    defaults: { _controller: HomeBundle:Home:index }
+
+#vehicule
+store:
+    path: /store
+    defaults: { _controller: HomeBundle:Home:store }
+
+#apropos
+about:
+    path: /apropos
+    defaults: { _controller: HomeBundle:Home:about }
+cardetail:
+    path: /car_detail
+    defaults: { _controller: HomeBundle:Home:CarDetail }
+
+#contact
+contact:
+    path: /contact
+    defaults: { _controller: HomeBundle:Home:contact }
+
+#blog
+blog:
+    path: /blog
+    defaults: { _controller: HomeBundle:Home:blog }
+
+#singleblog
+singleBlog:
+    path: /blog/{id}
+    defaults: { _controller: HomeBundle:Home:singleBlog }
+car_detail:
+    path: /cardetail
+    defaults: { _controller: HomeBundle:Home:carDetailHome }
+
+#terms
+terms:
+    path: /terms/
+    defaults: { _controller: HomeBundle:Home:terms }
+
+
+#terms
+search:
+    path: /search/
+    defaults: { _controller: HomeBundle:Home:search }

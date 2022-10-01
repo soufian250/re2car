@@ -1,0 +1,42 @@
+{%extends '@Home/Home/master.html.twig'%}
+
+{% block  main %}
+
+
+    <div class="hero inner-page" style="background-image: url('{{ asset('assets/css/front/images/hero_1_a.jpg') }}');">
+        <div class="container">
+            <div class="row align-items-end ">
+                <div class="col-lg-5">
+                    <div class="intro">
+                        <h1><strong>Contact</strong></h1>
+                        <div class="custom-breadcrumbs"><a href="{{ path('home') }}">Accueil</a> <span class="mx-2">/</span> <strong>Contact</strong></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row m-4">
+        <div class="col-md-9">
+            <div class="dealer_more_info">
+                <h5 class="gray-bg info_title">TERMES ET CONDITIONS :</h5>
+                <p>&#x2022;Le conducteur désigné au contrat doit être âgé de plus de 23 ans. Il doit être également titulaire, depuis au moins deux ans, d'un permis de conduire en cours de validité. Cela doit être justifié par des documents originaux.</p>
+                <p>&#x2022;Si un second conducteur est demandé, celui/celle-ci doit être présent(e) au moment du départ et présenter l'original de son permis de conduire ainsi qu'une carte d'identité ou un passeport.<br>Seuls les conducteurs identifiés sur le contrat de location sont autorisés à conduire le véhicule loué.</p>
+                <p>&#x2022;La durée de location se calcule par tranche de 24 heures non fractionnable, depuis l'heure de mise à disposition du véhicule.<br>Le locataire s'engage à restituer le véhicule au loueur à la date prévue au contrat de location, si vous souhaitez le conserver au-delà de cette date il vous appartiendra de demander une prolongation au loueur.</p>
+                <p>&#x2022;Le règlement du coût de location diit s'effectuer à la livraison du véhicule et peut se faire en espèce, par virement Swift ou par carte de crédit.<br>Nos tarifs comprennent Le kilométrage illimité, L'assurance tout risuqe avec 5?franchise, livraison et retour du véhicule.</p>
+                <p>&#x2022;Les véhicules sont assurés tout risques. Toutefois, pour tout dégât autre que le vol du véhicule, incendie, bris de glace, responsabilité civile et personnes transportées (PAI), une franchise non rachetable de 5% reste à la charge du conducteur dans le cas ou sa responsabilité partielle ou entière serait engagée. Pour tout accident, une déclaration sous 24 H et un constat sous 48 H sont obligatoire.</p>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-4 col-xs-12">
+            <div class="dealer_contact_info gray-bg">
+                <h6>Location</h6>
+                <a href="#">Menara, Aeroport, Marrakech </a></div>
+            <div class="dealer_contact_info gray-bg">
+                <h6>Email</h6>
+                <a href="mailto:contact@recar.ma">contact@recar.ma</a></div>
+            <div class="dealer_contact_info gray-bg">
+                <h6>Tél.</h6>
+                <a href="tel:+212666144838">+212 666 144 838 </a></div>
+        </div>
+    </div>
+
+{% endblock %}

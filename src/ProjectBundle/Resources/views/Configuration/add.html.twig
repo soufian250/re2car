@@ -1,0 +1,58 @@
+{%extends '@Project/base.html.twig'%}
+
+{% form_theme form '@Project/Form/fields.html.twig' %}
+
+
+{% block  main %}
+
+    <!-- ======= Main ======= -->
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('index_page') }}">Home</a></li>
+                    <li class="breadcrumb-item">Gestion de voiture</li>
+                    <li class="breadcrumb-item active">Ajouter une voiture</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-10">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ajouter une voiture </h5>
+
+                            <!-- General Form Elements -->
+
+                            {{ form_start(form) }}
+                            {{ form_row(form.car) }}
+
+                            {{ form_row(form.mileage) }}
+                            {{ form_row(form.maintenanceMileage) }}
+                            {{ form_row(form.periodBool) }}
+                            {{ form_row(form.maintenancePeriod) }}
+
+                            {{ form_row(form.save) }}
+                            {{ form_end(form) }}
+
+                            <!-- End General Form Elements -->
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+
+{% endblock %}

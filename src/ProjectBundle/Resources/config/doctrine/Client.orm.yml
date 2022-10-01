@@ -1,0 +1,79 @@
+ProjectBundle\Entity\Client:
+    type: entity
+    table: null
+    repositoryClass: ProjectBundle\Repository\ClientRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        firstName:
+            type: string
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+        lastName:
+            type: string
+            scale: 0
+            length: 255
+            unique: false
+            nullable: false
+            precision: 0
+        salt:
+            type: string
+            scale: 0
+            length: 32
+            unique: false
+            nullable: true
+            precision: 0
+        email:
+            type: string
+            scale: 0
+            length: 60
+            unique: true
+            nullable: false
+            precision: 0
+        cin:
+            type: string
+            scale: 0
+            length: 10
+            unique: true
+            nullable: false
+        phoneNumber:
+            type: string
+            scale: 0
+            length: 100
+            unique: true
+            nullable: false
+            precision: 0
+        statusReservation:
+            type: boolean
+            nullable: true
+            options:
+                default: false
+        reservationNumber:
+            type: integer
+            options:
+                default: 0
+        createdAt:
+            type: datetime
+            scale: 0
+            length: null
+            unique: false
+            nullable: true
+            precision: 0
+        updatedAt:
+            type: datetime
+            scale: 0
+            length: null
+            unique: false
+            nullable: true
+            precision: 0
+    oneToMany:
+        reservations:
+            targetEntity: ProjectBundle\Entity\Client
+            mappedBy: client
+    lifecycleCallbacks: {  }

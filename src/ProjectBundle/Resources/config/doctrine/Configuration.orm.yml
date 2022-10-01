@@ -1,0 +1,31 @@
+ProjectBundle\Entity\Configuration:
+    type: entity
+    table: null
+    repositoryClass: ProjectBundle\Repository\ConfigurationRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        maintenancePeriod:
+            type: string
+            length: 255
+        maintenanceMileage:
+            type: integer
+        mileage:
+            type: boolean
+        periodBool:
+            type: boolean
+        updatedAt:
+            type: datetime
+            nullable: true
+        createdAt:
+            type: datetime
+            nullable: true
+    oneToOne:
+        car:
+            targetEntity: ProjectBundle\Entity\Car
+            onDelete: CASCADE
+    lifecycleCallbacks: {  }

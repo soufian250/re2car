@@ -1,0 +1,74 @@
+ProjectBundle\Entity\Car:
+    type: entity
+    table: null
+    repositoryClass: ProjectBundle\Repository\CarRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        matriclue:
+            type: string
+            length: 255
+            unique: true
+        name:
+            type: string
+            length: 255
+        imageName:
+            type: string
+            length: 255
+        seat:
+            type: integer
+            length: 10
+        door:
+            type: integer
+            length: 10
+        air_conditioner:
+            type: boolean
+            options:
+                default: false
+        transmission:
+            type: string
+            length: 255
+        fuel:
+            type: string
+            length: 255
+        passenger:
+            type: integer
+            length: 255
+        statusReservation:
+            type: boolean
+            nullable: true
+            options:
+                default: false
+        rentAmount:
+            type: float
+            options:
+                default: 0
+        caution:
+            type: float
+            options:
+                default: 0
+        insurance_date :
+            type: datetime
+            nullable: true
+        updatedAt:
+            type: datetime
+            nullable: true
+        createdAt:
+            type: datetime
+            nullable: true
+    manyToOne:
+        type:
+            targetEntity: ProjectBundle\Entity\Type
+            inversedBy: types
+            joinColumn:
+                name: type_id
+                referencedColumnName: id
+    oneToMany:
+        reservations:
+            targetEntity: ProjectBundle\Entity\Car
+            mappedBy: car
+    lifecycleCallbacks: {  }

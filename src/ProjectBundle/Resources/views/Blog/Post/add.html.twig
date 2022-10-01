@@ -1,0 +1,72 @@
+{%extends '@Project/base.html.twig'%}
+
+{% form_theme form '@Project/Form/fields.html.twig' %}
+
+
+{% block  main %}
+
+    <!-- ======= Main ======= -->
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('index_page') }}">Home</a></li>
+                    <li class="breadcrumb-item">Gestion de voiture</li>
+                    <li class="breadcrumb-item active">Ajouter une voiture</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-10">
+
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ajouter une voiture </h5>
+
+                            <!-- General Form Elements -->
+
+                            {{ form_start(form) }}
+                                {{ form_row(form.title) }}
+                            <div class="text_widget">
+                                <div class="row mb-3">
+                                    <label for="inputText" class="col-sm-2 col-form-label"> <label for="post_imageName">Article</label></label>
+                                    <div class="col-sm-10">
+                                        <div id="editor">
+                                            {{ form_row(form.body) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                                {{ form_row(form.published,{'attr':{'style':'margin-top: 62px'}}) }}
+                                {{ form_row(form.imageName) }}
+                                {{ form_row(form.slug) }}
+                                {{ form_row(form.save) }}
+                            {{ form_end(form) }}
+
+                            <!-- End General Form Elements -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <!-- Create the toolbar container -->
+
+
+        <!-- Create the editor container -->
+
+
+    </main><!-- End #main -->
+
+
+{% endblock %}

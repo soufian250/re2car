@@ -1,0 +1,3 @@
+recar_rest:
+   resource: HomeBundle\ApiRestController\ApiRestHomeController
+   type: rest

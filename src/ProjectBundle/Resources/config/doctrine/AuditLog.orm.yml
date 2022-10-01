@@ -1,0 +1,27 @@
+ProjectBundle\Entity\AuditLog:
+    type: entity
+    table: null
+    repositoryClass: ProjectBundle\Repository\AuditLogRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        activity:
+            type: string
+            length: 255
+        entity:
+            type: string
+            length: 255
+        dateActivity:
+            type: datetime
+        createdAt:
+            type: datetime
+            nullable: true
+    manyToOne:
+        user:
+            targetEntity: UserBundle\Entity\User
+            inversedBy: users
+    lifecycleCallbacks: {  }

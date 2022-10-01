@@ -1,0 +1,43 @@
+ProjectBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: ProjectBundle\Repository\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: 255
+            nullable: false
+        slug:
+            type: string
+            length: 255
+            nullable: false
+            unique: true
+        views:
+            type: integer
+            nullable: true
+            options:
+                default: 0
+        imageName:
+            type: string
+            length: 255
+            nullable: true
+        body:
+            type: text
+            nullable: false
+        published:
+            type: boolean
+            options:
+                default: false
+        updatedAt:
+            type: datetime
+            nullable: true
+        createdAt:
+            type: datetime
+            nullable: true
+    lifecycleCallbacks: {  }

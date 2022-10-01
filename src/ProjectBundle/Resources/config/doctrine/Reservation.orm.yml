@@ -1,0 +1,52 @@
+ProjectBundle\Entity\Reservation:
+  type: entity
+  table: null
+  repositoryClass: ProjectBundle\Repository\ReservationRepository
+  id:
+    id:
+      type: integer
+      id: true
+      generator:
+        strategy: AUTO
+  fields:
+    startDate:
+      type: datetime
+      nullable: true
+    endDate:
+      type: datetime
+      nullable: true
+    startTime:
+      type: time
+      nullable: true
+    endTime:
+      type: time
+      nullable: true
+    daysNumber:
+      type: integer
+      length: 10
+      nullable: true
+    statusReservation:
+      type: boolean
+      options:
+        default: false
+    amountTotal:
+      type: float
+      options:
+        default: 0
+    cautionStatus:
+      type: boolean
+      options:
+        default: false
+  manyToOne:
+    client:
+      targetEntity: ProjectBundle\Entity\Client
+      inversedBy: clients
+      cascade: { }
+      orphanRemoval: false
+    car:
+      targetEntity: ProjectBundle\Entity\Car
+      inversedBy: cars
+      cascade: { }
+      orphanRemoval: false
+  lifecycleCallbacks: {  }
+

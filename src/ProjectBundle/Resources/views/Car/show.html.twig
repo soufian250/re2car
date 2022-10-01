@@ -1,0 +1,67 @@
+{% extends '@Project/base.html.twig' %}
+
+
+{% block main %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active">Afficher les voitures</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">List des voitures</h5>
+                            <!-- Table with stripped rows -->
+                            <table class="table datatable">
+                                <thead>
+                                <tr>
+                                    <th scope="col">Image</th>
+                                    <th scope="col">Voiture</th>
+                                    <th scope="col">Action</th>
+                                    <th scope="col">Status huile</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    {% for car in cars %}
+                                        <tr>
+{#                                            <th ><a href="#"><img  src="{{ asset('assets/img/product-1.jpg') }}" alt=""></a></th>#}
+                                            {% if car.imageName != "" %}
+
+                                                <th scope="row"> <img alt="car" width="65px" height="65px" src="{{ asset('uploads/recar/car/images/'~car.imageName)  }}" /></th>
+                                            {% endif %}
+                                            <td>{{ car.name }}</td>
+                                            <td>
+                                                <a href="{{ path('car_edit',{'id':car.id }) }}"> <i color="orange" class="ri-mark-pen-line"> </i></a>
+                                                <a href="#" onclick="deleteCar({{ car.id }})"> <i style="color: red" class="ri-delete-bin-3-line m-2"> </i></a>
+                                                <a href="{{ path('car_detail',{'id':car.id }) }}"> <i class="ri-information-line"> </i></a>
+                                            </td>
+                                            {# TODO: make the status dynamique #}
+                                            <td><span  class="badge bg-success">Bien</span></td>
+                                        </tr>
+
+
+
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                            <!-- End Table with stripped rows -->
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+{% endblock %}

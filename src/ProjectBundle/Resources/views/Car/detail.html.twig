@@ -1,0 +1,81 @@
+{% extends '@Project/base.html.twig' %}
+
+{% block main %}
+
+
+    <main id="main" class="main">
+
+        <div class="row">
+            <div class="col-5">
+
+                 <img width="350px" height="350px" src="{{  asset('uploads/recar/car/images/' ~ car.imageName)  }}" />
+
+
+            </div>
+            <div class="col-7">
+                <div class="card basic">
+                    <div class="card-body">
+                        <h5 class="card-title">Voiture Info</h5>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-4">
+                                    <label style="color: #8b7c7c; font-size: medium;font-weight: bold">Nom de voiture:</label>
+                                </div>
+                                <div class="col-8">{{ car.name }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label style="color: #8b7c7c; font-size: medium;font-weight: bold">Matriclue:</label>
+                                </div>
+                                <div class="col-8">{{ car.matriclue }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label style="color: #8b7c7c; font-size: medium;font-weight: bold">Nombre de siege:</label>
+                                </div>
+                                <div class="col-8">{{ car.seat }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label style="color: #8b7c7c; font-size: medium;font-weight: bold">Nom de porte:</label>
+                                </div>
+                                <div class="col-8">{{ car.door }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label style="color: #8b7c7c; font-size: medium;font-weight: bold">Nom de voiture:</label>
+                                </div>
+                                <div class="col-8">{{ car.name }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label style="color: #8b7c7c; font-size: medium;font-weight: bold">Transmision:</label>
+                                </div>
+                                <div class="col-8">{{ car.transmission }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label style="color: #8b7c7c; font-size: medium;font-weight: bold">Status de réservation:</label>
+                                </div>
+                                <div class="col-8">{{ car.statusReservation }}</div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4">
+                                    <label style="color: #8b7c7c; font-size: medium;font-weight: bold">A/C:</label>
+                                </div>
+                                <div class="col-8">{{ car.airConditioner }}</div>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}
+

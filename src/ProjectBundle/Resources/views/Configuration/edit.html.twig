@@ -1,0 +1,47 @@
+{%extends '@Project/base.html.twig'%}
+
+
+{% block  main %}
+
+    <!-- ======= Main ======= -->
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('index_page') }}">Home</a></li>
+                    <li class="breadcrumb-item">Gestion de configuration</li>
+                    <li class="breadcrumb-item active">Ajouter une configuration</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-10">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Modifier une configuration </h5>
+
+                            <!-- General Form Elements -->
+
+                            {{ form_start(form) }}
+                            {{ form_widget(form) }}
+                            {{ form_end(form) }}
+
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+
+{% endblock %}

@@ -1,0 +1,110 @@
+
+project_homepage_admin:
+    path:     /admin
+    defaults: { _controller: ProjectBundle:Default:index }
+
+
+index_page:
+    path: /
+    defaults: { _controller: ProjectBundle:Default:index }
+
+
+#Car
+car_add:
+    path: /car/add
+    defaults: { _controller: ProjectBundle:Car:add }
+
+car_show:
+    path: /car/show
+    defaults: { _controller: ProjectBundle:Car:show }
+
+car_edit:
+    path: /car/edit/{id}
+    defaults: { _controller: ProjectBundle:Car:edit }
+
+car_detail:
+    path: /car/detail/{id}
+    defaults: { _controller: ProjectBundle:Car:detail }
+
+#Reservation
+reservation_add:
+    path: /reservation/add/test
+    defaults: { _controller: ProjectBundle:Reservation:add }
+
+reservation_show:
+    path: /reservation/show
+    defaults: { _controller: ProjectBundle:Reservation:show }
+
+
+reservation_edit:
+    path: /reservation/edit/{id}
+    defaults: { _controller: ProjectBundle:Car:edit }
+
+
+reservation_detail:
+    path: /reservation/detail/{id}
+    defaults: { _controller: ProjectBundle:Reservation:detail}
+
+
+
+
+#Client
+client_add:
+    path: /client/add
+    defaults: { _controller: ProjectBundle:Client:add }
+
+client_show:
+    path: /client/show/{add}
+    defaults: { _controller: ProjectBundle:Client:show, add: 1 }
+
+client_show_add:
+    path: /client/show/add
+    defaults: { _controller: ProjectBundle:Client:show }
+
+
+client_edit:
+    path: /client/edit/{id}
+    defaults: { _controller: ProjectBundle:Client:edit }
+
+client_reservation:
+    path: /client/reservation/{id}
+    defaults: { _controller: ProjectBundle:Client:reservation }
+
+
+#Blog
+post_add:
+    path: /post/add
+    defaults: { _controller: ProjectBundle:Blog:add }
+
+post_show:
+    path: /post/show
+    defaults: { _controller: ProjectBundle:Blog:show }
+
+post_edit:
+    path: /post/edit/{id}
+    defaults: { _controller: ProjectBundle:Blog:edit }
+
+post_list:
+    path: /post/list
+    defaults: { _controller: ProjectBundle:Blog:list }
+
+
+#User
+user_profile:
+    path: /user/profile
+    defaults: { _controller: ProjectBundle:Default:userProfile }
+
+
+
+#Configuration
+configuration_add:
+    path: /configuration/add
+    defaults: { _controller: ProjectBundle:Configuration:add }
+
+configuration_show:
+    path: /configuration/show
+    defaults: { _controller: ProjectBundle:Configuration:show }
+
+configuration_edit:
+    path: /configuration/edit/{id}
+    defaults: { _controller: ProjectBundle:Configuration:edit }

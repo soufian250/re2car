@@ -1,0 +1,38 @@
+{% extends '@Project/base.html.twig' %}
+
+{% block main %}
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('index_page') }}">Home</a></li>
+                    <li class="breadcrumb-item active">List des articles</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <h1>List des articles</h1>
+        <section class="section">
+            <table class="table datatable">
+                <thead>
+                    <tr>
+                        <td>title</td>
+                        <td>body</td>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for post in posts  %}
+                    <tr>
+                        <td>{{ post.title }}</td>
+                        <td>{{ post.title }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </section>
+
+    </main><!-- End #main -->
+{% endblock %}
+

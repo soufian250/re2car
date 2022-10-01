@@ -1,0 +1,66 @@
+services:
+
+    # --TWIG EXTENSION --
+
+    global.twig_extension.global:
+      class: ProjectBundle\Twig\GlobalExtension
+      arguments: [ "@doctrine.orm.default_entity_manager" ]
+      tags:
+        - { name: twig.extension }
+#Car
+    car.twig_extension.carextension:
+      class: ProjectBundle\Twig\CarExtension
+      arguments: ["@doctrine.orm.default_entity_manager"]
+      tags:
+        - { name: twig.extension }
+
+#Client
+    client.twig_extension.clientxtension:
+      class: ProjectBundle\Twig\ClientExtension
+      arguments: ["@doctrine.orm.default_entity_manager"]
+      tags:
+        - { name: twig.extension }
+
+  #Reservation
+    reservation.twig_extension.reservationextension:
+      class: ProjectBundle\Twig\ReservationExtension
+      arguments: ["@doctrine.orm.default_entity_manager"]
+      tags:
+        - { name: twig.extension }
+
+# --TWIG EXTENSION --
+
+#CAR
+    car.cartype:
+      class: ProjectBundle\Form\CarType
+      arguments: [ "@doctrine.orm.entity_manager",'@service_container' ]
+      tags:
+        - { name: form.type }
+
+#Reservation
+    reservation.reservationtype:
+      class: ProjectBundle\Form\ReservationType
+      arguments: [ "@doctrine.orm.entity_manager",'@service_container' ]
+      tags:
+        - { name: form.type }
+
+#Client
+    client.clienttype:
+      class: ProjectBundle\Form\ClientType
+      arguments: [ "@doctrine.orm.entity_manager",'@service_container' ]
+      tags:
+        - { name: form.type }
+
+#Blog
+    blog.posttype:
+      class: ProjectBundle\Form\PostType
+      arguments: [ "@doctrine.orm.entity_manager",'@service_container' ]
+      tags:
+        - { name: form.type }
+
+  #Configuration
+    configuration.configuration_type:
+      class: ProjectBundle\Form\ConfigurationType
+      arguments: [ "@doctrine.orm.entity_manager",'@service_container' ]
+      tags:
+        - { name: form.type }

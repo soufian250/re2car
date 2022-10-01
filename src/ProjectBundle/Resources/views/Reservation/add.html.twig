@@ -1,0 +1,86 @@
+{%extends '@Project/base.html.twig'%}
+
+{% form_theme form '@Project/Form/fields.html.twig' %}
+
+{% block  main %}
+
+    <!-- ======= Main ======= -->
+    <main id="main" class="main">
+
+        <div class="pagetitle">
+
+            <nav>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="{{ path('index_page') }}">Home</a></li>
+                    <li class="breadcrumb-item">Gestion de reservation</li>
+                    <li class="breadcrumb-item active">Ajouter une reservation</li>
+                </ol>
+            </nav>
+        </div><!-- End Page Title -->
+
+        <section class="section">
+            <div class="row">
+                <div class="col-lg-10">
+
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">Ajouter une reservation </h5>
+
+                            <div class="row mb-3">
+                                <label for="inputText" class="col-sm-2 col-form-label"> Date</label>
+
+                                <div class="col-sm-6">
+                                    <input type="hidden" class="form-control"  id="custom">
+                                </div>
+                                <div class="col-2">
+                                    <input readonly class="form-control daysNumber"/>
+                                </div>
+                                <div class="col-2 mt-2">
+                                    <span>Jour(s)</span>
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <label for="inputText" class="col-sm-2 col-form-label"> Heur </label>
+                                <div class="col-2">
+                                    <input type="hidden" class="form-control"  id="startTime">
+                                </div>
+
+                                <div class="col-2 text-center mt-2">
+                                    <span>à</span>
+                                </div>
+
+                                <div class="col-2">
+                                    <input type="hidden" class="form-control"  id="endTime">
+                                </div>
+                            </div>
+
+                            <div class="row mt-3">
+                                <div class="col-6">
+
+                                    {{form_start(form,{'attr':{'id':'form-reservation'}})}}
+                                        {{ form_row(form.client,{'attr':{'style':'margin-left: 62px'}})}}
+                                        {{ form_row(form.car,{'attr':{'style':'margin-left: 62px'}})}}
+
+                                        {{ form_widget(form.cautionStatus) }}
+
+                                        {{ form_row(form.save) }}
+                                    {{ form_end(form) }}
+
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </section>
+
+    </main><!-- End #main -->
+
+
+
+{% endblock %}
